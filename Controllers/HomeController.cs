@@ -18,6 +18,16 @@ namespace SelfAiFrontEndTasarımı.Controllers
             return View();
         }
 
+        public IActionResult GenerateImagee(MediaGenerationRequestDto dto)
+        {
+            return View();
+        }
+
+        public IActionResult ai_image_generation_studio()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

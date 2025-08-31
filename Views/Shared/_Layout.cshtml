@@ -4,13 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SelfAiFrontEndTasarımı</title>
+
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SelfAiFrontEndTasarımı.styles.css" asp-append-version="true" />
+
+    @* Bootstrap CSS pasif edildi *@
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+
+    @* Eski site CSS’leri pasif edildi (istersen test için) *@
+    @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    @* <link rel="stylesheet" href="~/SelfAiFrontEndTasarımı.styles.css" asp-append-version="true" /> *@
+
+    @* Tailwind CSS aktif edildi *@
+    <link rel="stylesheet" href="~/wwwroot/css/main.css" />
 </head>
 <body>
-    <header>
+    @* <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SelfAiFrontEndTasarımı</a>
@@ -30,18 +38,18 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header> *@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+   @*  <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - SelfAiFrontEndTasarımı - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
