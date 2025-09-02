@@ -203,20 +203,113 @@ body {
     @apply animate-spin;
 }
 
-/* Scrollbar Styling */
-.custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+/* Enhanced Custom Scrollbar for Flux Image Style Panel */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: var(--color-surface);
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--color-text-secondary);
-    border-radius: 3px;
-}
-
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: var(--color-text-primary);
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
     }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 20px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, rgba(148, 163, 184, 0.3) 0%, rgba(148, 163, 184, 0.5) 100%);
+        border-radius: 20px;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(139, 92, 246, 0.6) 100%);
+            border-color: rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 8px rgba(99, 102, 241, 0.1);
+            transform: scaleX(1.2);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:active {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.6) 0%, rgba(139, 92, 246, 0.8) 100%);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+    .custom-scrollbar::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+
+/* Special scrollbar styling for Flux Style Panel with oval design integration */
+#fluxPanelContent.custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+}
+
+#fluxPanelContent.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(42, 42, 42, 0.3);
+    border-radius: 25px;
+    margin: 2.5rem 0;
+}
+
+#fluxPanelContent.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(148, 163, 184, 0.2) 0%, rgba(148, 163, 184, 0.4) 50%, rgba(148, 163, 184, 0.2) 100% );
+    border-radius: 25px;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    #fluxPanelContent.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0.6) 30%, rgba(139, 92, 246, 0.6) 70%, rgba(139, 92, 246, 0.3) 100% );
+        box-shadow: 0 0 12px rgba(99, 102, 241, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        transform: scaleX(1.5);
+    }
+
+    #fluxPanelContent.custom-scrollbar::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.5) 0%, rgba(99, 102, 241, 0.8) 30%, rgba(139, 92, 246, 0.8) 70%, rgba(139, 92, 246, 0.5) 100% );
+        box-shadow: 0 0 16px rgba(99, 102, 241, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+/* Firefox support for Flux Panel */
+#fluxPanelContent {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+}
+
+/* Smooth scrolling behavior for Flux Panel */
+#fluxPanelContent {
+    scroll-behavior: smooth;
+}
+
+    /* Additional visual enhancement - subtle glow effect on scroll */
+    #fluxPanelContent::-webkit-scrollbar-track:hover {
+        background: rgba(42, 42, 42, 0.5);
+        box-shadow: inset 0 0 6px rgba(99, 102, 241, 0.05);
+    }
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .mobile-hide {
+        display: none;
+    }
+
+    /* Adjust scrollbar for mobile in Flux Panel */
+    #fluxPanelContent.custom-scrollbar::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    #fluxPanelContent.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        transform: scaleX(2);
+    }
+}
+
+@media (max-width: 640px) {
+    .mobile-stack {
+        flex-direction: column;
+    }
+
+    .mobile-full {
+        width: 100%;
+    }
+}
